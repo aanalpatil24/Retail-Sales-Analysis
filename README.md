@@ -1,8 +1,9 @@
 # Retail Sales Analysis SQL Project
 
 [![SQL](https://img.shields.io/badge/SQL-Skills-blue)](https://www.sql.org/)  
-[![Python](https://img.shields.io/badge/Python-EDA-green)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-EDA-green)](https://www.python.org/)  
 [![Data Analysis](https://img.shields.io/badge/Data-Analysis-orange)](https://www.python.org/)
+
 
 ---
 
