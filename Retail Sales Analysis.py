@@ -8,7 +8,7 @@ import numpy as np
 # Load Data
 # -----------------------------
 # If data is in CSV
-df = pd.read_csv("Retail Sales Analysis.csv")
+# df = pd.read_csv("retail_sales.csv")
 
 # For demonstration, creating empty DataFrame with same columns
 columns = ['transaction_id', 'sale_date', 'sale_time', 'customer_id', 
@@ -133,4 +133,3 @@ print(q10)
 # -----------------------------
 # End of Project
 # -----------------------------
-
