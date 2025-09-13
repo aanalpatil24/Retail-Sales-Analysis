@@ -1,4 +1,7 @@
 -- Retail Sales Analysis Project
+-- Commencing of the project
+
+-- Create Database
 
 CREATE DATABASE IF NOT EXISTS Retail_Sales_Analysis;
 USE Retail_Sales_Analysis;
@@ -67,7 +70,7 @@ SELECT * FROM retail_sales
 WHERE 
     category = 'Clothing' AND
     DATE_FORMAT(sale_date, '%Y-%m') = '2022-11' AND
-    quantity >= 4;
+    quantity >= 5;
     
 -- Q3: Total sales in each category
 SELECT 
