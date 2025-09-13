@@ -16,9 +16,10 @@ CREATE TABLE retail_sales (
     age	INT,
     category VARCHAR(25),	
     quantity INT,
-    price_per_unit FLOAT,	
-    purchase_cost FLOAT,
-    total_sale FLOAT
+    price_per_unit DECIMAL(10,2),
+    purchase_cost DECIMAL(10,2),
+    total_sale DECIMAL(10,2)
+
 );
 
 -- Preview Data
