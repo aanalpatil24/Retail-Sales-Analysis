@@ -67,10 +67,9 @@ WHERE sale_date = '2022-11-05';
 
 -- Q2: All transactions with category='Clothing' and quantity >= 5 in November 2022
 SELECT * FROM retail_sales
-WHERE 
-    category = 'Clothing' AND
-    DATE_FORMAT(sale_date, '%Y-%m') = '2022-11' AND
-    quantity >= 5;
+WHERE category = 'Clothing' AND
+      sale_date BETWEEN '2022-11-01' AND '2022-11-30' 
+    AND quantity >= 5;
     
 -- Q3: Total sales in each category
 SELECT 
