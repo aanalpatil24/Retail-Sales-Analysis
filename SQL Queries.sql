@@ -1,7 +1,5 @@
 -- Retail Sales Analysis Project
--- Commencing of the project
-
--- Create Database
+-- Commencing of thw project
 
 CREATE DATABASE IF NOT EXISTS Retail_Sales_Analysis;
 USE Retail_Sales_Analysis;
@@ -27,6 +25,8 @@ SELECT * FROM retail_sales LIMIT 10;
 
 -- Total Sales
 SELECT COUNT(*) FROM retail_sales;
+
+SET SQL_SAFE_UPDATES=0;
 
 -- Data Cleaning Checks
 SELECT * FROM retail_sales
@@ -60,7 +60,7 @@ SELECT COUNT(*) AS total_sale FROM retail_sales;
 -- Total Unique Customers
 SELECT COUNT(DISTINCT customer_id) AS unique_customers FROM retail_sales;
 -- Total Unique Categories
-SELECT DISTINCT category, COUNT(DISTINCT category) FROM retail_sales GROUP BY category;
+SELECT DISTINCT category FROM retail_sales GROUP BY category;
 
 -- Q1: Sales on 2022-11-05
 SELECT * FROM retail_sales
@@ -69,8 +69,8 @@ WHERE sale_date = '2022-11-05';
 -- Q2: All transactions with category='Clothing' and quantity >= 5 in November 2022
 SELECT * FROM retail_sales
 WHERE category = 'Clothing' AND
-      sale_date BETWEEN '2022-11-01' AND '2022-11-30' 
-    AND quantity >= 5;
+      sale_date BETWEEN '2022-11-01' AND '2022-11-30' AND
+      quantity >= 5;
     
 -- Q3: Total sales in each category
 SELECT 
@@ -98,17 +98,17 @@ FROM retail_sales
 GROUP BY category, gender
 ORDER BY category, gender;
 
--- Q7: Average sale for each month and the best selling month in each year
+-- Q7: The best selling month in each year
 SELECT 
     year,
     month,
-    avg_sale
+    total_sale
 FROM (
     SELECT 
         YEAR(sale_date) AS year,
         MONTH(sale_date) AS month,
-        AVG(total_sale) AS avg_sale,
-        RANK() OVER (PARTITION BY YEAR(sale_date) ORDER BY AVG(total_sale) DESC) AS rnk
+        SUM(total_sale) AS total_sale,
+        RANK() OVER (PARTITION BY YEAR(sale_date) ORDER BY SUM(total_sale) DESC) AS rnk
     FROM retail_sales
     GROUP BY YEAR(sale_date), MONTH(sale_date)
 ) AS ranked_sales
@@ -142,4 +142,5 @@ SELECT
 FROM retail_sales
 GROUP BY shift;
 
--- End of project
+-- End of the project
+
