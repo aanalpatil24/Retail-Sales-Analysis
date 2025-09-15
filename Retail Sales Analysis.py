@@ -101,5 +101,5 @@ df['shift'] = df['sale_time'].apply(assign_shift)
 q10 = df.groupby('shift').size().reset_index(name='total_orders')
 print(q10)
 
-
 # End of Retail Sales Project
+
