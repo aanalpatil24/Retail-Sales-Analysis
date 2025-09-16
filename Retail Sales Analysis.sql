@@ -1,5 +1,5 @@
 -- Retail Sales Analysis Project
--- Commencing of thw project
+-- Commencement of the project
 
 CREATE DATABASE IF NOT EXISTS Retail_Sales_Analysis;
 USE Retail_Sales_Analysis;
